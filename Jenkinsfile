@@ -16,7 +16,8 @@ pipeline {
 
         stage('Build & Test') {
             steps {
-                sh 'mvn clean test'
+                sh './mvnw clean test'
+
             }
         }
 
@@ -24,7 +25,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('sonar') {
                     sh '''
-                      mvn sonar:sonar \
+                      ./mvnw sonar:sonar \
                       -Dsonar.projectKey=springboot-java
                     '''
                 }
