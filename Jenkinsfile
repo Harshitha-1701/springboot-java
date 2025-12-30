@@ -16,7 +16,7 @@ pipeline {
 
         stage('Build & Test') {
             steps {
-                sh './mvnw clean test'
+                sh './mvnw clean package'
 
             }
         }
